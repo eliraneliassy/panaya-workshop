@@ -10,7 +10,10 @@ import {Post} from "../posts.interface";
 export class PostComponent implements OnInit {
 
   @Input() post: Post | null = null;
+  @Input() isLiked: boolean | null = false;
   @Output() liked = new EventEmitter<Post | null>();
+  @Output() unLiked = new EventEmitter<Post | null>();
+
 
   constructor() { }
 
@@ -19,6 +22,10 @@ export class PostComponent implements OnInit {
 
   like() {
     this.liked.emit(this.post);
+  }
+
+  unLike(){
+    this.unLiked.emit(this.post);
   }
 
 }

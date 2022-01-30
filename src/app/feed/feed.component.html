@@ -1,3 +1,5 @@
 <div class="container">
-  <app-post [post]="post" *ngFor="let post of posts$ | async"></app-post>
+  <app-post [post]="post"
+            [isLiked]="isLiked(post) | async"
+            *ngFor="let post of posts$ | async" (liked)="likedPost($event)"></app-post>
 </div>

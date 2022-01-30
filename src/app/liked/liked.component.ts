@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {Observable} from "rxjs";
 import {Post} from "../posts.interface";
+import {LikedQuery} from "./liked.query";
 
 @Component({
   selector: 'app-liked',
@@ -10,11 +11,13 @@ import {Post} from "../posts.interface";
 })
 export class LikedComponent implements OnInit {
 
-  posts$: Observable<Post[]> = new Observable<Post[]>();
+  posts$: Observable<Post[]> = this.likedQuery.selectLiked$;
+  numberOfliked$: Observable<number> = this.likedQuery.numerOfLikedPosts$;
 
-  constructor() { }
+  constructor(private likedQuery: LikedQuery) { }
 
   ngOnInit(): void {
+
   }
 
 }

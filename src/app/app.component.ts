@@ -9,14 +9,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
-  posts$: Observable<Post[]> = new Observable();
 
-  constructor(private postsService: PostsService) {
-  }
-
-  ngOnInit(): void {
-    this.posts$ = this.postsService.getPosts();
-  }
 }

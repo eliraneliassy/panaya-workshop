@@ -2,7 +2,9 @@
   Panaya awesome posts projects
 </h1>
 
+<a routerLink="feed">Feed</a>
+<a routerLink="liked">Liked Posts</a>
 
-<ng-container *ngFor="let post of posts$ | async">
-  <app-post [post]="post"></app-post>
-</ng-container>
+
+
+<router-outlet></router-outlet>

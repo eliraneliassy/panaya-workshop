@@ -1,0 +1,7 @@
+<h2>
+  Liked posts:
+</h2>
+
+<ng-container *ngFor="let item of posts$ | async">
+  <app-post [post]="item"></app-post>
+</ng-container>
